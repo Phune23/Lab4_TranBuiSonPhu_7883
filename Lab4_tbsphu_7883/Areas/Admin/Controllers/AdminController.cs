@@ -96,32 +96,33 @@ namespace Lab4_tbsphu_7883.Controllers
             return View(product);
         }
 
-        // Show the product delete confirmation
-        public IActionResult Delete(int id)
+        // Hiển thị form xác nhận xóa sản phẩm
+        public async Task<IActionResult> Delete(int id)
         {
-            var product = _productRepository.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
             return View(product);
         }
-        // Process the product deletion
+
+        // Xử lý xóa sản phẩm
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _productRepository.DeleteAsync(id);
-            return RedirectToAction("Index");
+            await _productRepository.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
 
-        //public async IActionResult Details(int id)
-        //{
-        //    var product = await _productRepository.GetByIdAsync(id);
-        //    if (product == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(product);
-        //}
+        public async Task<IActionResult> Details(int id)
+        {
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
     }
 }
