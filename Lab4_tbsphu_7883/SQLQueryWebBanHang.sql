@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Webbanhang]    Script Date: 4/1/2024 10:45:29 AM ******/
+/****** Object:  Database [Webbanhang]    Script Date: 4/1/2024 10:45:29 AM */
 CREATE DATABASE [Webbanhang]
 GO
 USE [Webbanhang]
