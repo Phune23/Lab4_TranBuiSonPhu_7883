@@ -29,28 +29,6 @@ body {
     text-align: center;
 }
 
-.header_menu {
-    background: radial-gradient(circle, rgb(80, 112, 202,1) 0%, rgb(51, 227, 236,1) 100% );
-}
-
-.header .row {
-    margin-top: 70px;
-}
-
-.container_menu {
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-top: 25px;
-    max-width: 100%;
-}
-
-.navbar_menu {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
 nav {
     flex: 1;
     text-align: right;
@@ -60,40 +38,113 @@ nav {
         display: inline-block;
         list-style-type: none;
     }
-
         nav ul li {
             display: inline-block;
-            margin-right: 20px;
         }
 
 a {
     text-decoration: none;
     color: #fff;
-    margin: 10px;
+    margin: 5px;
     transition: background 0.5s;
+}
+.blur {
+    filter: blur(8px);
+}
+/*==========================================SelectNon===========================================*/
+.selectNon {
+    user-select: none; /*khong cho select*/
+    /* pointer-events: none; khong click*/
+}
+/*=============================================Menu=============================================*/
+
+.header_menu {
+    background: radial-gradient(circle, rgb(80, 112, 202,1) 0%, rgb(51, 227, 236,1) 100% );
+}
+
+.container_menu {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 15px;
+    padding-top: 15px;
+    max-width: 100%;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
 }
 
 .btnMenu {
     display: inline-block;
-    color: white;
-    padding: 10px 10px;
-    border-radius: 70px;
-    transition: background 0.5s;
+    color: black;
+    border-radius: 10px;
+    transition: background 1s;
+    box-shadow: 2px 2px lightblue;
+    background-color: #2295e4;
 }
 
     .btnMenu:hover {
-        background: #3930e0;
+        background: #0510c9
     }
 
+/*=============================================Product=============================================*/
+
 .btnProduct {
-    background: #258cfb;
     display: inline-block;
     color: black;
-    padding: 10px 10px;
     border-radius: 10px;
-    transition: background 0.5s;
+    transition: background 1s;
+    box-shadow: 2px 2px lightblue;
+    background-color: #2295e4;
+    padding:10px;
 }
     .btnProduct:hover {
-        background: #3930e0;
-        color: white;
+        background: #0510c9
     }
+
+/*=============================================Home=============================================*/
+.editMain-home{
+    text-align:center;
+}
+.editMain-home-pic {
+    border-radius: 25px;
+    box-shadow:10px 10px lightblue;
+    border-color: black;
+    margin-top:80px;
+    width:25%;
+}
+
+.editMain-home-text {
+    color: white;
+    text-shadow:4px 4px lightblue;
+    font-size:80px;
+}
+
+.backgroundHome {
+    background: radial-gradient(circle, rgb(217, 233, 239) 0%, rgb(169, 229, 244) 100% );
+}
+
+/*=============================================AllText=============================================*/
+.editMain-home-PicMainAll {
+    border-radius: 25px;
+    box-shadow: 10px 10px lightblue;
+    border-color: black;
+
+}
+
+.editMain-home-AllText {
+    color: white;
+    text-shadow: 4px 4px lightblue;
+    font-size: 80px;
+}
+
+.editMain-home-NomalAllText {
+    color: white;
+    text-shadow: 4px 4px lightblue;
+    font-size: 25px;
+}
+
+.backgroundAllText {
+    background: radial-gradient(circle, rgb(217, 233, 239) 0%, rgb(169, 229, 244) 100% );
+}

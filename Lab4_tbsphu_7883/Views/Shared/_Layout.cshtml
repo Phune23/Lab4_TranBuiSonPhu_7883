@@ -7,35 +7,46 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Lab4_tbsphu_7883.styles.css" asp-append-version="true" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 header_menu">
+        <nav class="navbar navbar-expand-sm mb-3 header_menu">
+                <a class="navbar-brand text-light fw-bold selectNon" asp-area="" asp-controller="Home" asp-action="Index">
+                <ion-icon name="logo-dropbox"></ion-icon> ShopCar
+                </a>
             <div class="container-fluid container_menu">
-                <a class="navbar-brand text-light fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Lab4_tbsphu_7883</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 MenuItems_menu">
+                    <ul class="MenuItems_menu selectNon">
                         <li class="nav-item">
-                            <a class="nav-link text-light btnMenu" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light btnMenu " asp-area="" asp-controller="Home" asp-action="Index">
+                                <ion-icon name="home-outline"></ion-icon> Trang chủ
+                            </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-light btnMenu " asp-area="" asp-controller="Product" asp-action="Index">
+                                <ion-icon name="receipt-outline"></ion-icon> Sản phẩm
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light btnMenu " asp-area="" asp-controller="ShoppingCart" asp-action="Index">
+                                <ion-icon name="bag-outline"></ion-icon> Giỏ hàng
+                            </a>
+                        </li>
+                        @* <li class="nav-item">
                             <a class="nav-link text-light btnMenu" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light btnMenu" asp-area="" asp-controller="Product" asp-action="Index">Sản phẩm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light btnMenu" asp-area="" asp-controller="ShoppingCart" asp-action="Index">Giỏ hàng</a>
-                        </li>
+                        </li> *@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -43,9 +54,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted header_menu">
+    <footer class="border-top footer text-muted header_menu selectNon">
         <div class="container text-light center">
-            &copy; 2024 - Lab4_tbsphu_7883 -<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Lab4_tbsphu_7883 -<a asp-area="" asp-controller="Home" asp-action="Home">Trang chủ</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
