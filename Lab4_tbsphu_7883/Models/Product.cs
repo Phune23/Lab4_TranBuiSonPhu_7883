@@ -8,12 +8,12 @@ namespace Lab4_tbsphu_7883.Models
         public int Id { get; set; }
         [Required, StringLength(100)]
         [DisplayName ("Tên sản phẩm")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         [Range(0.01, 10000.00)]
         [DisplayName("Giá")]
         public decimal Price { get; set; }
         [DisplayName("Mô tả")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [DisplayName("Ảnh")]
         public string? ImageUrl { get; set; }
         public List<ProductImage>? Images { get; set; }

@@ -86,9 +86,14 @@ a {
     }
 
 .btnProduct {
+    background: #258cfb;
     display: inline-block;
     color: black;
     padding: 10px 10px;
-    border-radius: 70px;
+    border-radius: 10px;
     transition: background 0.5s;
 }
+    .btnProduct:hover {
+        background: #3930e0;
+        color: white;
+    }

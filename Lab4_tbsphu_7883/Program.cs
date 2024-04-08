@@ -1,9 +1,20 @@
-using Lab4_tbsphu_7883.Data;
+﻿using Lab4_tbsphu_7883.Data;
 using Lab4_tbsphu_7883.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+
 builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
 // Add services to the container.
@@ -15,9 +26,11 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -29,6 +42,7 @@ else
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
+// Đặt trước UseRouting
 
 app.UseRouting();
 
